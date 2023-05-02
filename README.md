@@ -1,5 +1,5 @@
 # Hash-Pass
-transform password's to hash (sha256) 
+transform password's to hash 
 # Requirements
 Hashlib
 
