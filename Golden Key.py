@@ -1,5 +1,5 @@
 import csv
-from hashlib import sha256
+from hashlib import sha224 , sha384 , sha512 , md5 , sha256
 
 
 def num_gen():
@@ -22,9 +22,22 @@ def num_gen():
     main()
 
 
+def hash_gen():
+       
+    print("Select one of this option \n (1) Generate number password \n (2) Generate my password's to hash  ")
+    option = input("")
+
+    if option == "1":
+        num_gen()
+    elif option == "2":
+        sha_gen()
+
+    else:
+        print("just insert number and press Enter")
+        pass
 
 
-def pass_to_hash():
+def pass_to_hash_256():
     fin = input("Insert File Path \n")
 
     with open(fin,'r') as paslist:
@@ -38,7 +51,7 @@ def pass_to_hash():
                 hex_dig = hash_obj.hexdigest()
                 out_put = [[word,hex_dig]]
                 print(out_put)
-                with open("hashpass/pass hashed.csv" , mode='a' ,newline='') as f:
+                with open("hashpass/pass hashed 256.csv" , mode='a' ,newline='') as f:
                     writer = csv.writer(f,delimiter=':')
                     for inner_pass in out_put:
                         writer.writerow(inner_pass)
@@ -47,27 +60,120 @@ def pass_to_hash():
 
 
                     f.close()
+        main()               
 
 
+def pass_to_hash_224():
+
+    fin = input("Insert File Path \n")
+
+    with open(fin,'r') as paslist:
+        reader = csv.reader(paslist)
+        for row in reader:
+            if row:
+
+                word = row[0]
+
+                hash_obj = sha224(word.encode())
+                hex_dig = hash_obj.hexdigest()
+                out_put = [[word,hex_dig]]
+                print(out_put)
+                with open("hashpass/pass hashed 224.csv" , mode='a' ,newline='') as f:
+                    writer = csv.writer(f,delimiter=':')
+                    for inner_pass in out_put:
+                        writer.writerow(inner_pass)
+
+                    f.close()
+        main()
 
 
+def pass_to_hash_384():
+    fin = input("Insert File Path \n")
 
-def hash_gen():
-       
-    print("Select one of this option \n (1) Generate number password \n (2) Generate my password's to hash  ")
-    option = input("")
+    with open(fin,'r') as paslist:
+        reader = csv.reader(paslist)
+        for row in reader:
+            if row:
 
-    if option == "1":
-        num_gen()
-    elif option == "2":
-        pass_to_hash()
+                word = row[0]
 
-    else:
-        print("just insert number and press Enter")
-        pass
+                hash_obj = sha384(word.encode())
+                hex_dig = hash_obj.hexdigest()
+                out_put = [[word,hex_dig]]
+                print(out_put)
+                with open("hashpass/pass hashed 384.csv" , mode='a' ,newline='') as f:
+                    writer = csv.writer(f,delimiter=':')
+                    for inner_pass in out_put:
+                        writer.writerow(inner_pass)
+
+                    f.close()
+        main()
 
 
+def pass_to_hash_512():
+    fin = input("Insert File Path \n")
 
+    with open(fin,'r') as paslist:
+        reader = csv.reader(paslist)
+        for row in reader:
+            if row:
+
+                word = row[0]
+
+                hash_obj = sha512(word.encode())
+                hex_dig = hash_obj.hexdigest()
+                out_put = [[word,hex_dig]]
+                print(out_put)
+                with open("hashpass/pass hashed 512.csv" , mode='a' ,newline='') as f:
+                    writer = csv.writer(f,delimiter=':')
+                    for inner_pass in out_put:
+                        writer.writerow(inner_pass)
+
+                    f.close()
+        main()
+
+
+def pass_to_hash_md5():
+    fin = input("Insert File Path \n")
+
+    with open(fin,'r') as paslist:
+        reader = csv.reader(paslist)
+        for row in reader:
+            if row:
+
+                word = row[0]
+
+                hash_obj = md5(word.encode())
+                hex_dig = hash_obj.hexdigest()
+                out_put = [[word,hex_dig]]
+                print(out_put)
+                with open("hashpass/pass hashed md5.csv" , mode='a' ,newline='') as f:
+                    writer = csv.writer(f,delimiter=':')
+                    for inner_pass in out_put:
+                        writer.writerow(inner_pass)
+
+                    f.close()
+        main()
+
+
+def sha_gen():
+    s = input("Choose one of these methods\n (1) sha256\n (2) sha224\n (3) sha384\n (4) sha512\n (5) md5\n")
+
+    if s == "1":
+        pass_to_hash_256()
+
+    elif s == "2":
+        pass_to_hash_224()
+
+    elif s == "3":
+        pass_to_hash_384()
+
+    elif s =="4":
+        pass_to_hash_512()
+
+    elif s == "5":
+        pass_to_hash_md5()
+    
 
 def read_hash():
     fin = input("Insert File Path \n")
@@ -76,9 +182,6 @@ def read_hash():
         for row in pass_hash:
             print(':'.join(row))
     main()
-
-
-
 
 
 def find_hash():
@@ -93,13 +196,6 @@ def find_hash():
             if search in line[0]:
                 print(line[0])
         main()
-
-
-
-
-
-
-
 
 
 print("wellcome to has pass \n just select a option :)")
