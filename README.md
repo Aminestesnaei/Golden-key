@@ -9,7 +9,7 @@ transform password's to hash (sha224, 256, 384,512, md5) \
 
 ## License
 
-[MIT(2023)](https://choosealicense.com/licenses/mit/)
+[MIT(2023)]([https://choosealicense.com/licenses/mit/](https://github.com/Aminestesnaei/Golden-key/blob/main/LICENSE))
 
 
 ![Logo](https://github.com/Aminestesnaei/Golden-key/blob/main/icon.png)
