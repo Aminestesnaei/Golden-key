@@ -11,12 +11,13 @@
 
 
 
+![Logo](https://github.com/Aminestesnaei/Golden-key/blob/main/icon.png)
+
+
 ## License
 
 [MIT](https://github.com/Aminestesnaei/Golden-key/blob/main/LICENSE)
 
-
-![Logo](https://github.com/Aminestesnaei/Golden-key/blob/main/icon.png)
 
 
 ## Feedback
