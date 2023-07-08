@@ -270,6 +270,7 @@ def root():
     root.iconbitmap('hashpass\icon.ico')
     root.geometry("1440x800")
     root.resizable(width=False, height=False)
+    customtkinter.deactivate_automatic_dpi_awareness()
     root.config(bg='#041C32')
 
     bg2 = customtkinter.CTkLabel(root, text="", fg_color="#04293A", bg_color='#041C32', width=1320, height=620,
