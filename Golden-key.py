@@ -254,20 +254,18 @@ def pass_start():
 
 def root():
     global num_entry
-    global num_gen_text
     global progressbar1
     global error_num_1
     global file_loead
     global num_v
     global pass_v
-    global find_entry
     global result_entry
     global paste_find
     global f_entry
     global result_entry
     root = customtkinter.CTk()
     root.title("Golden Key developed by NUC")
-    root.iconbitmap('hashpass\icon.ico')
+    root.iconbitmap('Golden-key-main\icon.ico')
     root.geometry("1440x800")
     root.resizable(width=False, height=False)
     customtkinter.deactivate_automatic_dpi_awareness()
