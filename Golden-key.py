@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import * 
 import customtkinter
 import os
 import csv
@@ -264,8 +264,8 @@ def root():
     global f_entry
     global result_entry
     root = customtkinter.CTk()
-    root.title("Golden Key developed by NUC")
-    root.iconbitmap('Golden-key-main\icon.ico')
+    root.title("Golden Key developed by Amin Estesnaei")
+    #root.iconbitmap('Golden-key-main\icon.ico')
     root.geometry("1440x800")
     root.resizable(width=False, height=False)
     customtkinter.deactivate_automatic_dpi_awareness()
